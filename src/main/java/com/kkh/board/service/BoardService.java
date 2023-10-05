@@ -33,7 +33,7 @@ public class BoardService {
 	}
 	
 	@Transactional(readOnly = true)
-	public Board getPostDetail(int id) {
+	public Board getPostDetail(Long id) {
 		return boardRepository.findById(id)
 				.orElseThrow(()->{
 					return new IllegalArgumentException("글 상세보기 실패 : 아이디를 찾을 수 없습니다.");
@@ -41,12 +41,12 @@ public class BoardService {
 	}
 	
 	@Transactional
-	public void deletePost(int id) {
+	public void deletePost(Long id) {
 		boardRepository.deleteById(id);
 	}
 	
 	@Transactional
-	public void updatePost(int id, Board requestBoard) {
+	public void updatePost(Long id, Board requestBoard) {
 		Board board = boardRepository.findById(id)
 				.orElseThrow(()->{
 					return new IllegalArgumentException("글 찾기 실패 : 아이디를 찾을 수 없습니다.");
@@ -62,7 +62,7 @@ public class BoardService {
 	}
 	
 	@Transactional
-	public void deleteComment(int replyId) {
+	public void deleteComment(Long replyId) {
 		replyRepository.deleteById(replyId);
 	}
 }

@@ -23,7 +23,7 @@ public class GetUserController {
 	private UserRepository userRepository;
 
 	@GetMapping("/{id}")
-	public User Userdetail(@PathVariable int id) {
+	public User Userdetail(@PathVariable Long id) {
 		User user = userRepository.findById(id).orElseThrow(()-> {
 			return new IllegalArgumentException("해당 사용자가 없습니다.");
 		});
@@ -45,7 +45,7 @@ public class GetUserController {
 
 
 	@DeleteMapping("/user/{id}")
-	public String deleteUser(@PathVariable int id) {
+	public String deleteUser(@PathVariable Long id) {
 		try {
 			userRepository.deleteById(id);
 		} catch (EmptyResultDataAccessException e) {
@@ -56,7 +56,7 @@ public class GetUserController {
 	
 	@Transactional
 	@PutMapping("/user/{id}")
-	public User updateUser(@PathVariable int id, @RequestBody User requestUser) { //json 데이터를 요청 => Java Object(MessageConverter의 Jackson라이브러리)가 변환해서 받아줘요.
+	public User updateUser(@PathVariable Long id, @RequestBody User requestUser) { //json 데이터를 요청 => Java Object(MessageConverter의 Jackson라이브러리)가 변환해서 받아줘요.
 		System.out.println("id : " + id);
 		System.out.println("password : " + requestUser.getPassword());
 		System.out.println("email : " + requestUser.getEmail());

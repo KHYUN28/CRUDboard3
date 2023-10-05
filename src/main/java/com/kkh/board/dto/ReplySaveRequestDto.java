@@ -9,9 +9,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ReplySaveRequestDto {
 
-	private int userId;
+	private Long userId;
 
-	private int boardId;
+	private Long boardId;
 
 	private String content;
 

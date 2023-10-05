@@ -27,7 +27,7 @@ public class GetBoardController {
 	}
 
 	@GetMapping("/{id}")
-	public Board Boarddetail(@PathVariable int id) {
+	public Board Boarddetail(@PathVariable Long id) {
 		Board board = boardRepository.findById(id).orElseThrow(()-> {
 			return new IllegalArgumentException("해당 사용자가 없습니다.");
 		});

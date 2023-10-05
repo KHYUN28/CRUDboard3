@@ -24,13 +24,13 @@ public class BoardApiController {
 	}
 	
 	@DeleteMapping("/{id}")
-	public ResponseDto<Integer> deleteById(@PathVariable int id) {
+	public ResponseDto<Integer> deleteById(@PathVariable Long id) {
 		boardService.deletePost(id);
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseDto<Integer> update(@PathVariable int id, @RequestBody Board board) {
+	public ResponseDto<Integer> update(@PathVariable Long id, @RequestBody Board board) {
 		boardService.updatePost(id, board);
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 	}

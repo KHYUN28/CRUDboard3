@@ -19,17 +19,17 @@ public class BoardController {
 	@GetMapping({"", "/"})
 	public String index(Model model, @PageableDefault(size=3,sort="id",direction = Sort.Direction.DESC) Pageable pageable) { 
 		model.addAttribute("boards", boardService.getPostList(pageable));
-		return "index"; // viewResolver 작동!!
+		return "index";
 	}
 	
 	@GetMapping("/board/{id}")
-	public String findById(@PathVariable int id, Model model) {
+	public String findById(@PathVariable Long id, Model model) {
 		model.addAttribute("board", boardService.getPostDetail(id));
 		return "board/detail";
 	}
 	
 	@GetMapping("/board/{id}/updateForm")
-	public String updateForm(@PathVariable int id, Model model) {
+	public String updateForm(@PathVariable Long id, Model model) {
 		model.addAttribute("board", boardService.getPostDetail(id));
 		return "board/updateForm";
 	}

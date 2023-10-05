@@ -21,7 +21,7 @@ public class ReplyApiController {
     }
 
     @DeleteMapping("/{boardId}/reply/{replyId}")
-    public ResponseDto<Integer> replyDelete(@PathVariable int replyId) {
+    public ResponseDto<Integer> replyDelete(@PathVariable Long replyId) {
         boardService.deleteComment(replyId);
         return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
     }

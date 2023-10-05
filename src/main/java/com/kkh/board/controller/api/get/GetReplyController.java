@@ -27,7 +27,7 @@ public class GetReplyController {
 	}
 
 	@GetMapping("/{id}")
-	public Reply Replydetail(@PathVariable int id) {
+	public Reply Replydetail(@PathVariable Long id) {
 		Reply reply = replyRepository.findById(id).orElseThrow(()-> {
 			return new IllegalArgumentException("해당 사용자가 없습니다.");
 		});
