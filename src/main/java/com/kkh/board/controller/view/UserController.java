@@ -55,12 +55,12 @@ public class UserController {
 
 
 	@GetMapping("/auth/kakao/callback")
-	public String kakaoCallback(String code) { // Data를 리턴해주는 컨트롤러 함수
+	public String kakaoCallback(String code) { // 디펜던시 사용 안하고 직접 구현
 
-		RestTemplate rt = new RestTemplate();
+		RestTemplate rtToken = new RestTemplate();
 
-		HttpHeaders headers = new HttpHeaders();
-		headers.add("Content-type", "application/x-www-form-urlencoded;charset=utf-8");
+		HttpHeaders headersToken = new HttpHeaders();
+		headersToken.add("Content-type", "application/x-www-form-urlencoded;charset=utf-8");
 
 		MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
 		params.add("grant_type", "authorization_code");
@@ -70,19 +70,19 @@ public class UserController {
 
 		// HttpHeader와 HttpBody를 하나의 오브젝트에 담기
 		HttpEntity<MultiValueMap<String, String>> kakaoTokenRequest =
-				new HttpEntity<>(params, headers);
+				new HttpEntity<>(params, headersToken);
 
 		// Http 요청하기 - Post방식으로 - 그리고 response 변수의 응답 받음.
-		ResponseEntity<String> response = rt.exchange(
+		ResponseEntity<String> response = rtToken.exchange(
 				"https://kauth.kakao.com/oauth/token",
 				HttpMethod.POST,
 				kakaoTokenRequest,
 				String.class
 		);
 
-		// Gson, Json Simple, ObjectMapper
 		ObjectMapper objectMapper = new ObjectMapper();
 		OAuthToken oauthToken = null;
+
 		try {
 			oauthToken = objectMapper.readValue(response.getBody(), OAuthToken.class);
 		} catch (JsonMappingException e) {
@@ -97,21 +97,22 @@ public class UserController {
 
 		//=================================================================================
 
-		RestTemplate rt2 = new RestTemplate();
+		RestTemplate rt = new RestTemplate();
 
-		HttpHeaders headers2 = new HttpHeaders();
-		headers2.add("Authorization", "Bearer " + oauthToken.getAccess_token());
-		headers2.add("Content-type", "application/x-www-form-urlencoded;charset=utf-8");
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("Authorization", "Bearer " + oauthToken.getAccess_token());
+		headers.add("Content-type", "application/x-www-form-urlencoded;charset=utf-8");
 
 		HttpEntity<MultiValueMap<String, String>> kakaoProfileRequest2 =
-				new HttpEntity<>(headers2);
+				new HttpEntity<>(headers);
 
-		ResponseEntity<String> response2 = rt2.exchange(
+		ResponseEntity<String> response2 = rt.exchange(
 				"https://kapi.kakao.com/v2/user/me",
 				HttpMethod.POST,
 				kakaoProfileRequest2,
 				String.class
 		);
+
 		System.out.println(response2.getBody());
 
 		ObjectMapper objectMapper2 = new ObjectMapper();
@@ -128,9 +129,9 @@ public class UserController {
 		System.out.println("===================================================");
 		System.out.println("카카오 아이디(번호) : " + kakaoProfile.getId());
 		System.out.println("카카오 이메일 : " + kakaoProfile.getKakao_account().getEmail());
-		System.out.println("블로그 유저네임 : " + kakaoProfile.getKakao_account().getEmail() + "_" + kakaoProfile.getId());
-		System.out.println("블로그서버 이메일 : " + kakaoProfile.getKakao_account().getEmail());
-		System.out.println("블로그서버 패스워드 : " + Key);
+		System.out.println("유저네임 : " + kakaoProfile.getKakao_account().getEmail() + "_" + kakaoProfile.getId());
+		System.out.println("이메일 : " + kakaoProfile.getKakao_account().getEmail());
+		System.out.println("패스워드 : " + Key);
 		System.out.println("===================================================");
 
 		User kakaoUser = User.builder()

@@ -50,8 +50,8 @@ let index = {
 	},
 	
 	update: function(){
+
 		let id = $("#id").val();
-		
 		let data = {
 			title: $("#title").val(),
 			content: $("#content").val()
