@@ -1,4 +1,4 @@
-package com.kkh.board.get;
+package com.kkh.board.controller.api.get;
 
 import java.util.List;
 

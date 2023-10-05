@@ -1,4 +1,4 @@
-package com.kkh.board.get;
+package com.kkh.board.controller.api.get;
 
 import com.kkh.board.model.Board;
 import com.kkh.board.repository.BoardRepository;
