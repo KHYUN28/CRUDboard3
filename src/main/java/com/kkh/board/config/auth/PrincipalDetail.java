@@ -12,6 +12,7 @@ import lombok.Data;
 
 @Data
 public class PrincipalDetail implements UserDetails {
+
 	private User user;
 
 	public PrincipalDetail(User user) {
@@ -44,10 +45,7 @@ public class PrincipalDetail implements UserDetails {
 	}
 
 	@Override
-	public boolean isEnabled() {
-		// TODO Auto-generated method stub
-		return true;
-	}
+	public boolean isEnabled() { return true; }
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {

@@ -1,5 +1,5 @@
 package com.kkh.board.config;
 
 public enum RoleType {
-	USER
+	USER, ADMIN
 }

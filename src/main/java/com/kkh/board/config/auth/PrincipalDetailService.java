@@ -8,7 +8,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-@Service // Bean 등록
+@Service
 public class PrincipalDetailService implements UserDetailsService{
 
 	@Autowired
