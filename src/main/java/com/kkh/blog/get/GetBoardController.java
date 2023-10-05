@@ -1,10 +1,7 @@
-package com.kkh.blog.test;
+package com.kkh.blog.get;
 
 import com.kkh.blog.model.Board;
-import com.kkh.blog.model.Reply;
-import com.kkh.blog.model.User;
 import com.kkh.blog.repository.BoardRepository;
-import com.kkh.blog.repository.ReplyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -19,7 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/boards")
-public class BoardControllerTest {
+public class GetBoardController {
 
 	@Autowired
 	private BoardRepository boardRepository;

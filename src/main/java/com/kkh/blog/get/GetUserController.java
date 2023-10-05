@@ -1,4 +1,4 @@
-package com.kkh.blog.test;
+package com.kkh.blog.get;
 
 import java.util.List;
 
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/users")
-public class UserControllerTest {
+public class GetUserController {
 
 	@Autowired
 	private UserRepository userRepository;
