@@ -19,10 +19,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Builder
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)

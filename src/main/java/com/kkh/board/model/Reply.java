@@ -17,11 +17,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
-@AllArgsConstructor
 @Builder
 @Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 public class Reply {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment
