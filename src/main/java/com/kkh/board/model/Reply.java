@@ -19,13 +19,12 @@ import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder // 빌더 패턴!!
+@Builder
 @Data
 @Entity
 public class Reply {
 
-	@Id // Primary Key
-	@GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment
 	private int id;
 	
 	@Column(nullable = false, length = 200)

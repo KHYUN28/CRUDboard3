@@ -28,12 +28,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Controller
 public class UserController {
-	
+
 	@Value("${key}")
 	private String Key;
 	
 	@Autowired
-	private AuthenticationManager authenticationManager; 
+	private AuthenticationManager authenticationManager;
 
 	@Autowired
 	private UserService userService;
@@ -67,11 +67,11 @@ public class UserController {
 		params.add("client_id", "059c43b42aa949ccdfaed590a8522969");
 		params.add("redirect_uri", "http://localhost:8080/auth/kakao/callback");
 		params.add("code", code);
-		
+
 		// HttpHeader와 HttpBody를 하나의 오브젝트에 담기
-		HttpEntity<MultiValueMap<String, String>> kakaoTokenRequest = 
+		HttpEntity<MultiValueMap<String, String>> kakaoTokenRequest =
 				new HttpEntity<>(params, headers);
-		
+
 		// Http 요청하기 - Post방식으로 - 그리고 response 변수의 응답 받음.
 		ResponseEntity<String> response = rt.exchange(
 				"https://kauth.kakao.com/oauth/token",
@@ -79,7 +79,7 @@ public class UserController {
 				kakaoTokenRequest,
 				String.class
 		);
-		
+
 		// Gson, Json Simple, ObjectMapper
 		ObjectMapper objectMapper = new ObjectMapper();
 		OAuthToken oauthToken = null;
@@ -103,7 +103,7 @@ public class UserController {
 		headers2.add("Authorization", "Bearer " + oauthToken.getAccess_token());
 		headers2.add("Content-type", "application/x-www-form-urlencoded;charset=utf-8");
 
-		HttpEntity<MultiValueMap<String, String>> kakaoProfileRequest2 = 
+		HttpEntity<MultiValueMap<String, String>> kakaoProfileRequest2 =
 				new HttpEntity<>(headers2);
 
 		ResponseEntity<String> response2 = rt2.exchange(
@@ -113,9 +113,10 @@ public class UserController {
 				String.class
 		);
 		System.out.println(response2.getBody());
-		
+
 		ObjectMapper objectMapper2 = new ObjectMapper();
 		KakaoProfile kakaoProfile = null;
+
 		try {
 			kakaoProfile = objectMapper2.readValue(response2.getBody(), KakaoProfile.class);
 		} catch (JsonMappingException e) {
@@ -140,7 +141,7 @@ public class UserController {
 				.build();
 
 		User originUser =  userService.findUser(kakaoUser.getUsername());
-		
+
 		if (originUser.getUsername() == null) {
 			System.out.println("===================================================");
 			System.out.println("기존 회원이 아닙니다.");
@@ -154,7 +155,7 @@ public class UserController {
 
 		Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(kakaoUser.getUsername(), Key));
 		SecurityContextHolder.getContext().setAuthentication(authentication);
-		
+
 		return "redirect:/";
 	}
 }
