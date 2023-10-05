@@ -38,7 +38,6 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
-
 	@GetMapping("/auth/joinForm")
 	public String joinForm() {
 		return "user/joinForm";
@@ -54,6 +53,7 @@ public class UserController {
 		return "user/updateForm";
 	}
 
+
 	@GetMapping("/auth/kakao/callback")
 	public String kakaoCallback(String code) { // Data를 리턴해주는 컨트롤러 함수
 
@@ -65,7 +65,7 @@ public class UserController {
 		MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
 		params.add("grant_type", "authorization_code");
 		params.add("client_id", "059c43b42aa949ccdfaed590a8522969");
-		params.add("redirect_uri", "http://localhost:8080/auth/kakao/callback");
+		params.add("redirect_uri", "http://localhost:7777/auth/kakao/callback");
 		params.add("code", code);
 
 		// HttpHeader와 HttpBody를 하나의 오브젝트에 담기
