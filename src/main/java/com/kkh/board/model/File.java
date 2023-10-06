@@ -29,10 +29,12 @@ public class File {
 
     public File(MultipartFile validatedFile, Board board) {
         this.fileName = validatedFile.getOriginalFilename();
-        this.fileUri = "http://localhost:7777/api/files/" + board.getId() + "_" + this.fileName;
+        this.fileUri = "http://localhost:7777/api/file/" + board.getId() + "_" + this.fileName;
         this.fileExtension = this.fileName.substring(this.fileName.lastIndexOf(".") + 1);
         this.board = board;
     }
 
 
+    public File(String filepath) {
+    }
 }

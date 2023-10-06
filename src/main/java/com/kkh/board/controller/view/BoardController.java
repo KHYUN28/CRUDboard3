@@ -1,14 +1,21 @@
 package com.kkh.board.controller.view;
 
+import com.kkh.board.model.File;
 import com.kkh.board.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
+import java.nio.file.Paths;
 
 @Controller
 public class BoardController {
@@ -38,4 +45,5 @@ public class BoardController {
 	public String saveForm() {
 		return "board/saveForm";
 	}
+
 }
