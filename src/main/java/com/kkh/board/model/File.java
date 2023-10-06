@@ -4,7 +4,10 @@ import javax.persistence.*;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.sql.Timestamp;
 
 @Entity
 @NoArgsConstructor
@@ -27,14 +30,7 @@ public class File {
     @JoinColumn(name = "BOARD_ID", nullable = false)
     private Board board;
 
-    public File(MultipartFile validatedFile, Board board) {
-        this.fileName = validatedFile.getOriginalFilename();
-        this.fileUri = "http://localhost:7777/api/file/" + board.getId() + "_" + this.fileName;
-        this.fileExtension = this.fileName.substring(this.fileName.lastIndexOf(".") + 1);
-        this.board = board;
-    }
+    @CreationTimestamp
+    private Timestamp createDate;
 
-
-    public File(String filepath) {
-    }
 }

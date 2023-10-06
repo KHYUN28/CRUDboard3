@@ -42,26 +42,4 @@ public class BoardApiController {
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 	}
 
-	@RequestMapping(value = "/uploadFile", method = RequestMethod.POST)
-	@ResponseBody
-	public ResponseEntity<?> uploadFile(
-			@RequestParam("uploadfile") MultipartFile uploadfile) {
-
-		try {
-
-			String filename = uploadfile.getOriginalFilename();
-			String directory = "/var/netgloo_blog/uploads";
-			String filepath = Paths.get(directory, filename).toString();
-
-			BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(String.valueOf(new File(filepath))));
-			stream.write(uploadfile.getBytes());
-			stream.close();
-		}
-		catch (Exception e) {
-			System.out.println(e.getMessage());
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-		}
-
-		return new ResponseEntity<>(HttpStatus.OK);
-	}
 }
