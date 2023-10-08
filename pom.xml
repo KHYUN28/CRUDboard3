@@ -76,29 +76,39 @@
 			<version>3.2.0</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/servlets.com/cos -->
+		<!--Multipart File Up&Download -->
 		<dependency>
-			<groupId>servlets.com</groupId>
-			<artifactId>cos</artifactId>
-			<version>05Nov2002</version>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.0</version>
 		</dependency>
 
-		<!--commons-fileupload-->
-		<dependency>
-			<groupId>commons-fileupload</groupId>
-			<artifactId>commons-fileupload</artifactId>
-			<version>1.4</version>
-		</dependency>
-
-		<!-- commons-io -->
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
-			<version>2.11.0</version>
+			<version>2.5</version>
 		</dependency>
 
+<!--		&lt;!&ndash; https://mvnrepository.com/artifact/servlets.com/cos &ndash;&gt;-->
+<!--		<dependency>-->
+<!--			<groupId>servlets.com</groupId>-->
+<!--			<artifactId>cos</artifactId>-->
+<!--			<version>05Nov2002</version>-->
+<!--		</dependency>-->
 
+<!--		&lt;!&ndash;commons-fileupload&ndash;&gt;-->
+<!--		<dependency>-->
+<!--			<groupId>commons-fileupload</groupId>-->
+<!--			<artifactId>commons-fileupload</artifactId>-->
+<!--			<version>1.4</version>-->
+<!--		</dependency>-->
 
+<!--		&lt;!&ndash; commons-io &ndash;&gt;-->
+<!--		<dependency>-->
+<!--			<groupId>commons-io</groupId>-->
+<!--			<artifactId>commons-io</artifactId>-->
+<!--			<version>2.11.0</version>-->
+<!--		</dependency>-->
 
 <!--		&lt;!&ndash; 파일업로드 기능지원 라이브러리 &ndash;&gt;-->
 <!--		&lt;!&ndash; https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload &ndash;&gt;-->

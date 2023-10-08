@@ -28,48 +28,28 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	}
 
 	@Bean
-	public BCryptPasswordEncoder encodePWD() {
-		return new BCryptPasswordEncoder();
+	public BCryptPasswordEncoder encodePWD() { return new BCryptPasswordEncoder(); }
+
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+		http
+			.csrf().disable()
+				.authorizeRequests()
+					.antMatchers("/", "/users/**","/boards/**","/replys/**",
+							"/auth/**", "/js/**","/image/**","/css/**")
+						.permitAll()
+							.anyRequest()
+								.authenticated()
+			.and()
+				.formLogin()
+					.loginPage("/auth/loginForm")
+						.loginProcessingUrl("/auth/loginProc")
+							.defaultSuccessUrl("/")
+								.failureUrl("/auth/loginForm?error=true"); // 로그인 실패시 이동할 페이지
 	}
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(principalDetailService).passwordEncoder(encodePWD());
 	}
-
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-		http
-			.csrf().disable()
-			.authorizeRequests()
-				.antMatchers("/", "/auth/**", "/js/**", "/css/**", "/image/**",
-						"/users/**","/boards/**","/replys/**")
-					.permitAll()
-					.anyRequest()
-					.authenticated()
-			.and()
-				.formLogin()
-					.loginPage("/auth/loginForm")
-					.loginProcessingUrl("/auth/loginProc")
-					.defaultSuccessUrl("/")
-					.failureUrl("/auth/loginForm?error=true"); // 로그인 실패시 이동할 페이지
-	}
-
-
-
-//	@Override
-//	protected void configure(HttpSecurity http) throws Exception {
-//		http
-//			.csrf().disable()
-//			.authorizeRequests()
-//				.antMatchers("/", "/auth/**", "/js/**", "/css/**", "/image/**", "/dummy/**")
-//					.permitAll()
-//						.anyRequest()
-//							.authenticated()
-//			.and()
-//				.formLogin()
-//					.loginPage("/auth/loginForm")
-//						.loginProcessingUrl("/auth/loginProc")
-//							.defaultSuccessUrl("/");
-//	}
 }
