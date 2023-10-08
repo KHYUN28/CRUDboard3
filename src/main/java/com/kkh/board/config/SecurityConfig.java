@@ -36,7 +36,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 			.csrf().disable()
 				.authorizeRequests()
 					.antMatchers("/", "/users/**","/boards/**","/replys/**",
-							"/auth/**", "/js/**","/image/**","/css/**")
+							"/auth/**", "/js/**","/image/**","/css/**","/fileUploadTest.do/**")
 						.permitAll()
 							.anyRequest()
 								.authenticated()
@@ -45,7 +45,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 					.loginPage("/auth/loginForm")
 						.loginProcessingUrl("/auth/loginProc")
 							.defaultSuccessUrl("/")
-								.failureUrl("/auth/loginForm?error=true"); // 로그인 실패시 이동할 페이지
+								.failureUrl("/auth/loginForm?error=true");
 	}
 
 	@Override

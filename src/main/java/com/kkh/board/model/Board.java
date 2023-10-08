@@ -45,7 +45,6 @@ public class Board {
 	private int count;
 	
 	@ManyToOne(fetch = FetchType.EAGER) // Many = Board, User = One
-	@JoinColumn(name="userId")
 	private User user;
 	
 	@OneToMany(mappedBy = "board", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)

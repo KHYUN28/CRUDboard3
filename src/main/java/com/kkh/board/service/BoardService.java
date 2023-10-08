@@ -17,6 +17,7 @@ public class BoardService {
 	
 	@Autowired
 	private BoardRepository boardRepository;
+
 	@Autowired
 	private ReplyRepository replyRepository;
 	
@@ -54,13 +55,13 @@ public class BoardService {
 		board.setTitle(requestBoard.getTitle());
 		board.setContent(requestBoard.getContent());
 	}
-	
+
 	@Transactional
 	public void writeComment(ReplySaveRequestDto replySaveRequestDto) {
 		int result = replyRepository.mSave(replySaveRequestDto.getUserId(), replySaveRequestDto.getBoardId(), replySaveRequestDto.getContent());
 		System.out.println("boardService: " + result);
 	}
-	
+
 	@Transactional
 	public void deleteComment(Long replyId) {
 		replyRepository.deleteById(replyId);

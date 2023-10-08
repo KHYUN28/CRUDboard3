@@ -42,8 +42,6 @@ public class UserService {
 			// MySQL에서 발생한 데이터 무결성 예외를 처리합니다.
 			throw new DuplicateEmailException("이미 사용 중인 이메일 주소입니다.");
 		}
-
-//		userRepository.save(user);
 	}
 	
 	@Transactional
@@ -51,7 +49,7 @@ public class UserService {
 		User persistance = userRepository.findById(user.getId()).orElseThrow(()->{
 			return new IllegalArgumentException("회원 찾기 실패");
 		});
-		
+
 		// Validate 체크 => oauth 필드에 값이 없으면 수정 가능
 		if (persistance.getOauth() == null || persistance.getOauth().equals("")) {
 			String rawPassowrd = user.getPassword();

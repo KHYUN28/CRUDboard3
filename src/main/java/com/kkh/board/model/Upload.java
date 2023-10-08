@@ -1,23 +1,29 @@
 package com.kkh.board.model;
 
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.sql.Timestamp;
 
 @Data
 @Entity
 public class Upload {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int fno;
 
-    String filename;
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment
+    private Long id;
 
-    String fileOriName;
+    @ManyToOne
+    private Board board;
 
-    String fileurl;
+    @ManyToOne
+    private User user;
+
+    String orgFileName;
+
+    String sysFileName;
+
+    @CreationTimestamp
+    private Timestamp createDate;
 
 }

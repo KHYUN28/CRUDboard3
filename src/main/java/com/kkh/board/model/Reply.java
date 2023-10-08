@@ -31,11 +31,9 @@ public class Reply {
 	private String content;
 	
 	@ManyToOne
-	@JoinColumn(name="boardId")
 	private Board board;
 
 	@ManyToOne
-	@JoinColumn(name="userId")
 	private User user;
 	
 	@CreationTimestamp
