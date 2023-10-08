@@ -31,11 +31,10 @@ public class UserService {
 	
 	@Transactional
 	public void registerUser(User user) {
-		String rawPassword = user.getPassword(); // 1234원문
-		String encPassword = encoder.encode(rawPassword); // 해쉬
+		String rawPassword = user.getPassword();
+		String encPassword = encoder.encode(rawPassword);
 		user.setPassword(encPassword);
 		user.setRole(RoleType.USER);
-		// 데이터 베이스에 있는 정보를 입력시 실패하도록 예외 추가
 		try {
 			userRepository.save(user);
 		} catch (DataIntegrityViolationException e) {

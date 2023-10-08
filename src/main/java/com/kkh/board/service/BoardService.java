@@ -22,7 +22,7 @@ public class BoardService {
 	private ReplyRepository replyRepository;
 	
 	@Transactional
-	public void writePost(Board board, User user) { // title, content
+	public void writePost(Board board, User user) {
 		board.setCount(0);
 		board.setUser(user);
 		boardRepository.save(board);
