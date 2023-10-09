@@ -68,3 +68,4 @@ http://localhost:7777/
 
 ![스크린샷 2023-10-09 175911](https://github.com/KHYUN28/CRUDboard3/assets/121412134/06975a9f-6c18-457f-9f5f-4eaba92931ec)
 
+- 원본 파일명과 저장 파일명을 따로 저장
