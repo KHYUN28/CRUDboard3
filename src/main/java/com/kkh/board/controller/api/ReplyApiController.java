@@ -1,6 +1,6 @@
 package com.kkh.board.controller.api;
 
-import com.kkh.board.dto.ReplySaveRequestDto;
+import com.kkh.board.dto.RequestDto;
 import com.kkh.board.dto.ResponseDto;
 import com.kkh.board.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +15,8 @@ public class ReplyApiController {
     private BoardService boardService;
 
     @PostMapping("/{boardId}/reply")
-    public ResponseDto<Integer> replySave(@RequestBody ReplySaveRequestDto replySaveRequestDto) {
-        boardService.writeComment(replySaveRequestDto);
+    public ResponseDto<Integer> replySave(@RequestBody RequestDto requestDto) {
+        boardService.writeComment(requestDto);
         return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
     }
 

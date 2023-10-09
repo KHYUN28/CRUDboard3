@@ -8,7 +8,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.kkh.board.dto.ReplySaveRequestDto;
+import com.kkh.board.dto.RequestDto;
 import com.kkh.board.model.Board;
 import com.kkh.board.model.User;
 
@@ -56,8 +56,8 @@ public class BoardService {
 	}
 
 	@Transactional
-	public void writeComment(ReplySaveRequestDto replySaveRequestDto) {
-		int result = replyRepository.mSave(replySaveRequestDto.getUserId(), replySaveRequestDto.getBoardId(), replySaveRequestDto.getContent());
+	public void writeComment(RequestDto requestDto) {
+		int result = replyRepository.mSave(requestDto.getUserId(), requestDto.getBoardId(), requestDto.getContent());
 		System.out.println("boardService: " + result);
 	}
 

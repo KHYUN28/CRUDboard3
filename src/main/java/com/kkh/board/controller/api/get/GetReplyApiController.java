@@ -1,7 +1,9 @@
 package com.kkh.board.controller.api.get;
 
-import com.kkh.board.model.Board;
-import com.kkh.board.repository.BoardRepository;
+import java.util.List;
+
+import com.kkh.board.model.Reply;
+import com.kkh.board.repository.ReplyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -12,33 +14,31 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
 @RestController
-@RequestMapping("/boards")
-public class GetBoardController {
+@RequestMapping("/replys")
+public class GetReplyApiController {
 
 	@Autowired
-	private BoardRepository boardRepository;
+	private ReplyRepository replyRepository;
 
 	@GetMapping
-	public List<Board> Boardlist() {
-		return boardRepository.findAll();
+	public List<Reply> Replylist() {
+		return replyRepository.findAll();
 	}
 
 	@GetMapping("/{id}")
-	public Board Boarddetail(@PathVariable Long id) {
-		Board board = boardRepository.findById(id).orElseThrow(()-> {
+	public Reply Replydetail(@PathVariable Long id) {
+		Reply reply = replyRepository.findById(id).orElseThrow(()-> {
 			return new IllegalArgumentException("해당 사용자가 없습니다.");
 		});
-		return board;
+		return reply;
 	}
 
-	@GetMapping("/board")
-	public Page<Board> BoardpageList(@PageableDefault(size=3,sort="id",direction = Sort.Direction.DESC) Pageable pageable) {
-		Page<Board> pagingBoard = boardRepository.findAll(pageable);
+	@GetMapping("/reply")
+	public Page<Reply> ReplypageList(@PageableDefault(size=3,sort="id",direction = Sort.Direction.DESC) Pageable pageable) {
+		Page<Reply> pagingReply = replyRepository.findAll(pageable);
 
-		List<Board> board = pagingBoard.getContent();
-		return pagingBoard;
+		List<Reply> reply = pagingReply.getContent();
+		return pagingReply;
 	}
 }
