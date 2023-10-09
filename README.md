@@ -2,6 +2,10 @@
 
 ***
 
+http://localhost:7777/
+
+***
+
 # 기술
 
 - IDE : Intellij
