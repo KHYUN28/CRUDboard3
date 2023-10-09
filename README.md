@@ -20,7 +20,7 @@ http://localhost:7777/
 - 게시글 CRUD (게시판 Editer 사용가능, 이미지도 업로드 가능 BASE64 이용)
 - 댓글 CRUD 
 - 로그인 (KAKAO OAuth 로그인 가능), 회원가입
-- 회원정보에서 PASSWORD 수정가능
+- 회원정보에서 PassWord 수정가능
 - 게시판 Paging
 - 게시글 작성 24시간 미만일 경우 new 마크
 - 파일 업로드 (파일 선택 후 업로드시 "C: A_UPLOAD" 폴더에 저장)
