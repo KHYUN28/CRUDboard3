@@ -4,7 +4,7 @@
 
 # 기술
 
-- IDE : INTELLIJ
+- IDE : Intellij
 - DBMS : MySQL
 - WAS : Apache Tomcat
 - Frontend : JSP (HTML, CSS, JS)
