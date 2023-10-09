@@ -13,7 +13,7 @@
 ***
 
 # 기능
-- 게시글 CRUD (게시판 Editer 사용가능, 이미지도 업로드 가능한데 BASE64 이용)
+- 게시글 CRUD (게시판 Editer 사용가능, 이미지도 업로드 가능 BASE64 이용)
 - 댓글 CRUD 
 - 로그인 (KAKAO OAuth 로그인 가능), 회원가입
 - 회원정보에서 PASSWORD 수정가능
