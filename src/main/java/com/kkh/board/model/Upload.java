@@ -16,7 +16,7 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 public class Upload {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne

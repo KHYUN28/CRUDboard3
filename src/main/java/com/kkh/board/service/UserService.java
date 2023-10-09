@@ -49,7 +49,6 @@ public class UserService {
 			return new IllegalArgumentException("회원 찾기 실패");
 		});
 
-		// Validate 체크 => oauth 필드에 값이 없으면 수정 가능
 		if (persistance.getOauth() == null || persistance.getOauth().equals("")) {
 			String rawPassowrd = user.getPassword();
 			String encPassword = encoder.encode(rawPassowrd);
