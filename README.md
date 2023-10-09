@@ -34,38 +34,41 @@ http://localhost:7777/
 
 # 게시판 화면
 
-![스크린샷 2023-10-09 180058](https://github.com/KHYUN28/CRUDboard3/assets/121412134/5879c78c-5320-4e8d-a11f-7bb0b8bd389e)
+![스크린샷 2023-10-09 180058](https://github.com/KHYUN28/CRUDboard3/assets/121412134/e4b1c0e7-1e3a-4de1-ad66-49da68efafad)
+
 
 ***
 
 # 게시판 Detail 화면
 
-![스크린샷 2023-10-09 1441655](https://github.com/KHYUN28/CRUDboard3/assets/121412134/c5e691d7-bbb4-41d9-a0a7-9ff62adab20a)
+![스크린샷 2023-10-09 1441655](https://github.com/KHYUN28/CRUDboard3/assets/121412134/21890c77-181b-438a-aed7-c8b86d5bc497)
+
 - 위 사진은 base64로 저장한 방식
 ***
 
 # Board Mysql
 
-![스크린샷 2023-10-09 175753](https://github.com/KHYUN28/CRUDboard3/assets/121412134/06b20a9e-e4e7-4b55-80b0-56a19f599fca)
+![스크린샷 2023-10-09 175753](https://github.com/KHYUN28/CRUDboard3/assets/121412134/ac588cdf-0ff3-4609-a720-e5745cea951f)
+
 
 ***
 
 # User Mysql
 
-![스크린샷 2023-10-09 175735](https://github.com/KHYUN28/CRUDboard3/assets/121412134/e8c64607-9e01-47f7-be1e-cef09bc5c4f4)
+![스크린샷 2023-10-09 175735](https://github.com/KHYUN28/CRUDboard3/assets/121412134/18ba9a24-8a2f-4ea8-98cb-e3ee04cd5f12)
 
 ***
 
 # reply Mysql
 
-![스크린샷 2023-10-09 175814](https://github.com/KHYUN28/CRUDboard3/assets/121412134/fd1bc47a-c7da-4672-87c1-0472f5802b21)
+![스크린샷 2023-10-09 175814](https://github.com/KHYUN28/CRUDboard3/assets/121412134/23ec6527-dbeb-4602-b8cb-04029b404a32)
 
 ***
 
 # Upload Mysql
 
-![스크린샷 2023-10-09 175933](https://github.com/KHYUN28/CRUDboard3/assets/121412134/234622f2-9b18-4c83-ad13-4d2711e1d17a)
+![스크린샷 2023-10-09 175933](https://github.com/KHYUN28/CRUDboard3/assets/121412134/f161dfe4-b2e6-4031-9a9d-c544386c4c6e)
 
-![스크린샷 2023-10-09 175911](https://github.com/KHYUN28/CRUDboard3/assets/121412134/06975a9f-6c18-457f-9f5f-4eaba92931ec)
+![스크린샷 2023-10-09 175911](https://github.com/KHYUN28/CRUDboard3/assets/121412134/4199c14a-f8a6-423a-8c5b-1d99f11747f4)
 
 - 원본 파일명과 저장 파일명을 따로 저장
