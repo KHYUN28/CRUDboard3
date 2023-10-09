@@ -24,7 +24,7 @@ public class UploadController {
     private UploadRepository uploadRepository;
 
 
-    @RequestMapping(value="/fileUploadTest")
+    @RequestMapping(value="/fileUpload")
     public String fileUploadTest(MultipartHttpServletRequest request, Model model, User user) {
 
         String rootUploadDir = "C:"+ File.separator+"A_Upload"; // C:/Upload
