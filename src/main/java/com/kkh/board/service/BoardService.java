@@ -17,7 +17,6 @@ public class BoardService {
 	
 	@Autowired
 	private BoardRepository boardRepository;
-
 	@Autowired
 	private ReplyRepository replyRepository;
 	

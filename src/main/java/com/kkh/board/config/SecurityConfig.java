@@ -20,16 +20,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 
 	@Autowired
 	private PrincipalDetailService principalDetailService;
-
-	@Bean
-	@Override
-	public AuthenticationManager authenticationManagerBean() throws Exception {
-		return super.authenticationManagerBean();
-	}
-
-	@Bean
-	public BCryptPasswordEncoder encodePWD() { return new BCryptPasswordEncoder(); }
-
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
@@ -52,4 +42,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(principalDetailService).passwordEncoder(encodePWD());
 	}
+
+	@Bean
+	@Override
+	public AuthenticationManager authenticationManagerBean() throws Exception {
+		return super.authenticationManagerBean();
+	}
+
+	@Bean
+	public BCryptPasswordEncoder encodePWD() { return new BCryptPasswordEncoder(); }
+
 }
