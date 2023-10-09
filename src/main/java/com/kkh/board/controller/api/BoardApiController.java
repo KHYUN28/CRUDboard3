@@ -13,26 +13,25 @@ import com.kkh.board.model.Board;
 @RestController
 @RequestMapping("/api/board")
 public class BoardApiController {
-	
+
 	@Autowired
 	private BoardService boardService;
-	
+
 	@PostMapping
 	public ResponseDto<Integer> save(@RequestBody Board board, @AuthenticationPrincipal PrincipalDetail principal) {
 		boardService.writePost(board, principal.getUser());
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 	}
-	
+
 	@DeleteMapping("/{id}")
 	public ResponseDto<Integer> deleteById(@PathVariable Long id) {
 		boardService.deletePost(id);
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 	}
-	
+
 	@PutMapping("/{id}")
 	public ResponseDto<Integer> update(@PathVariable Long id, @RequestBody Board board) {
 		boardService.updatePost(id, board);
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 	}
-
 }

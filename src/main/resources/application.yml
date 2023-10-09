@@ -1,5 +1,6 @@
 server:
   port: 7777
+
   servlet:
     context-path: /
     encoding:
@@ -43,4 +44,6 @@ spring:
       max-file-size: 100MB
       max-request-size: 100MB
 
-key: admin1234
+kakao:
+  client:
+    id:: admin1234

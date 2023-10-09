@@ -14,7 +14,4 @@ public class RequestDto {
 	private Long boardId;
 
 	private String content;
-
-
-
 }

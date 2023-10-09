@@ -17,7 +17,6 @@ public class UserApiController {
 
 	@Autowired
 	private UserService userService;
-
 	@Autowired
 	private AuthenticationManager authenticationManager;
 
