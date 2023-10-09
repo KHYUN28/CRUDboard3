@@ -34,10 +34,37 @@ http://localhost:7777/
 
 # 게시판 화면
 
-![스크린샷 2023-10-09 144501](https://github.com/KHYUN28/CRUDboard3/assets/121412134/d29243e2-6464-418e-8889-4d2692d37edf)
+![스크린샷 2023-10-09 180058](https://github.com/KHYUN28/CRUDboard3/assets/121412134/5879c78c-5320-4e8d-a11f-7bb0b8bd389e)
 
 ***
 
 # 게시판 Detail 화면
 
 ![스크린샷 2023-10-09 1441655](https://github.com/KHYUN28/CRUDboard3/assets/121412134/c5e691d7-bbb4-41d9-a0a7-9ff62adab20a)
+
+***
+
+# Board Mysql
+
+![스크린샷 2023-10-09 175753](https://github.com/KHYUN28/CRUDboard3/assets/121412134/06b20a9e-e4e7-4b55-80b0-56a19f599fca)
+
+***
+
+# User Mysql
+
+![스크린샷 2023-10-09 175735](https://github.com/KHYUN28/CRUDboard3/assets/121412134/e8c64607-9e01-47f7-be1e-cef09bc5c4f4)
+
+***
+
+# reply Mysql
+
+![스크린샷 2023-10-09 175814](https://github.com/KHYUN28/CRUDboard3/assets/121412134/fd1bc47a-c7da-4672-87c1-0472f5802b21)
+
+***
+
+# Upload Mysql
+
+![스크린샷 2023-10-09 175933](https://github.com/KHYUN28/CRUDboard3/assets/121412134/234622f2-9b18-4c83-ad13-4d2711e1d17a)
+
+![스크린샷 2023-10-09 175911](https://github.com/KHYUN28/CRUDboard3/assets/121412134/06975a9f-6c18-457f-9f5f-4eaba92931ec)
+
